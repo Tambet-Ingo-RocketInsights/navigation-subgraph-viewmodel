@@ -17,7 +17,7 @@ class DataFragment2 : Fragment(R.layout.fragment_data2) {
             textView.text = viewModel.data.name
 
             doneButton.setOnClickListener {
-                findNavController().popBackStack(R.id.homeFragment, false)
+                findNavController().popBackStack(R.id.data_graph, true)
             }
         }
     }

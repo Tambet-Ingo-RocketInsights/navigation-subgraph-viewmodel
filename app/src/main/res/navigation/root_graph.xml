@@ -12,6 +12,21 @@
         <action
             android:id="@+id/action_homeFragment_to_dataGraph"
             app:destination="@id/data_graph" />
+        <action
+            android:id="@+id/action_homeFragment_to_singleFragment"
+            app:destination="@id/singleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/singleFragment"
+        android:name="ee.it.navigation.SingleFragment"
+        android:label="SingleFragment" >
+
+        <argument
+            android:name="data"
+            app:nullable="false"
+            app:argType="ee.it.navigation.MyData" />
+
     </fragment>
 
     <!-- Sub graph with its own LifecycleOwner -->

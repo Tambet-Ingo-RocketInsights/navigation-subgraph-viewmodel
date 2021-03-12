@@ -22,12 +22,23 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/goButton"
+        android:id="@+id/goSharedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Go!"
+        android:text="Go Shared
+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameLayout" />
+
+    <Button
+        android:id="@+id/goSingleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Go Single"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goSharedButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

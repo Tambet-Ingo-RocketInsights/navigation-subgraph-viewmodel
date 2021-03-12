@@ -13,20 +13,35 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
 
         with(FragmentHomeBinding.bind(view)) {
-            goButton.setOnClickListener {
-                go(nameInput.text.toString())
+            goSharedButton.setOnClickListener {
+                goShared(nameInput.text.toString())
             }
 
-            goButton.isEnabled = false
+            goSharedButton.isEnabled = false
             nameInput.doAfterTextChanged {
-                goButton.isEnabled = it?.isNotBlank() ?: false
+                goSharedButton.isEnabled = it?.isNotBlank() ?: false
+            }
+
+            goSingleButton.setOnClickListener {
+                goSingle(nameInput.text.toString())
+            }
+
+            goSingleButton.isEnabled = false
+            nameInput.doAfterTextChanged {
+                goSingleButton.isEnabled = it?.isNotBlank() ?: false
             }
         }
     }
 
-    private fun go(name: String) {
+    private fun goShared(name: String) {
         val data = MyData(name, 123)
         val args = bundleOf("data" to data)
         findNavController().navigate(R.id.action_homeFragment_to_dataGraph, args)
+    }
+
+    private fun goSingle(name: String) {
+        val data = MyData(name, 123)
+        val args = bundleOf("data" to data)
+        findNavController().navigate(R.id.action_homeFragment_to_singleFragment, args)
     }
 }

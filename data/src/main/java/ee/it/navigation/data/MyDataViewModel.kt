@@ -1,10 +1,10 @@
-package ee.it.navigation
+package ee.it.navigation.data
 
 import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
-class MyDataViewModel(private val state: SavedStateHandle) : ViewModel() {
+internal class MyDataViewModel(private val state: SavedStateHandle) : ViewModel() {
     val data: MyData = requireNotNull(state.get<MyData>("data"))
 
     init {

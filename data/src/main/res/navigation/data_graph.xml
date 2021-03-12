@@ -7,12 +7,12 @@
 
     <argument
         android:name="data"
-        app:argType="ee.it.navigation.MyData"
+        app:argType="ee.it.navigation.data.MyData"
         app:nullable="false" />
 
     <fragment
         android:id="@+id/dataFragment1"
-        android:name="ee.it.navigation.DataFragment1"
+        android:name="ee.it.navigation.data.DataFragment1"
         android:label="DataFragment1"
         tools:layout="@layout/fragment_data1">
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/dataFragment2"
-        android:name="ee.it.navigation.DataFragment2"
+        android:name="ee.it.navigation.data.DataFragment2"
         android:label="DataFragment2"
         tools:layout="@layout/fragment_data2"/>
 </navigation>

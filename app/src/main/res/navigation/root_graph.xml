@@ -22,14 +22,14 @@
 
     <fragment
         android:id="@+id/singleFragment"
-        android:name="ee.it.navigation.SingleFragment"
+        android:name="ee.it.navigation.data.SingleFragment"
         android:label="SingleFragment"
         tools:layout="@layout/fragment_single">
 
         <argument
             android:name="data"
             app:nullable="false"
-            app:argType="ee.it.navigation.MyData" />
+            app:argType="ee.it.navigation.data.MyData" />
 
     </fragment>
 

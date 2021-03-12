@@ -1,11 +1,11 @@
-package ee.it.navigation
+package ee.it.navigation.data
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import ee.it.navigation.databinding.FragmentSingleBinding
+import ee.it.navigation.data.databinding.FragmentSingleBinding
 
 class SingleFragment : Fragment(R.layout.fragment_single) {
     private val viewModel: MyDataViewModel by viewModels()

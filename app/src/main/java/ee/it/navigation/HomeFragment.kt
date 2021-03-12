@@ -34,13 +34,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun goShared(name: String) {
-        val data = MyData(name, 123)
+        val data = ee.it.navigation.data.MyData(name, 123)
         val args = bundleOf("data" to data)
         findNavController().navigate(R.id.action_homeFragment_to_dataGraph, args)
     }
 
     private fun goSingle(name: String) {
-        val data = MyData(name, 123)
+        val data = ee.it.navigation.data.MyData(name, 123)
         val args = bundleOf("data" to data)
         findNavController().navigate(R.id.action_homeFragment_to_singleFragment, args)
     }

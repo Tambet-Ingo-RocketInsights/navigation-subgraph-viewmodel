@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_graph"
     app:startDestination="@id/homeFragment">
+
+    <include app:graph="@navigation/data_graph" />
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="ee.it.navigation.HomeFragment"
         android:label="Home"
-        app:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_dataGraph"
             app:destination="@id/data_graph" />
@@ -20,7 +23,8 @@
     <fragment
         android:id="@+id/singleFragment"
         android:name="ee.it.navigation.SingleFragment"
-        android:label="SingleFragment" >
+        android:label="SingleFragment"
+        tools:layout="@layout/fragment_single">
 
         <argument
             android:name="data"
@@ -29,26 +33,4 @@
 
     </fragment>
 
-    <!-- Sub graph with its own LifecycleOwner -->
-    <navigation android:id="@+id/data_graph"
-        app:startDestination="@id/dataFragment1" >
-
-        <argument
-            android:name="data"
-            app:nullable="false"
-            app:argType="ee.it.navigation.MyData" />
-
-        <fragment
-            android:id="@+id/dataFragment1"
-            android:name="ee.it.navigation.DataFragment1"
-            android:label="DataFragment1">
-            <action
-                android:id="@+id/action_dataFragment1_to_dataFragment2"
-                app:destination="@id/dataFragment2" />
-        </fragment>
-        <fragment
-            android:id="@+id/dataFragment2"
-            android:name="ee.it.navigation.DataFragment2"
-            android:label="DataFragment2" />
-    </navigation>
 </navigation>

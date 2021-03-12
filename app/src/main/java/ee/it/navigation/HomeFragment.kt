@@ -2,10 +2,11 @@ package ee.it.navigation
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.os.bundleOf
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import ee.it.navigation.data.DataNavGraph
+import ee.it.navigation.data.MyData
 import ee.it.navigation.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -34,14 +35,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun goShared(name: String) {
-        val data = ee.it.navigation.data.MyData(name, 123)
-        val args = bundleOf("data" to data)
-        findNavController().navigate(R.id.action_homeFragment_to_dataGraph, args)
+        val data = MyData(name, 123)
+        findNavController().navigate(DataNavGraph.directions(data))
     }
 
     private fun goSingle(name: String) {
-        val data = ee.it.navigation.data.MyData(name, 123)
-        val args = bundleOf("data" to data)
-        findNavController().navigate(R.id.action_homeFragment_to_singleFragment, args)
+        val data = MyData(name, 123)
+        findNavController().navigate(AppNavGraph.singleDirections(data))
     }
 }

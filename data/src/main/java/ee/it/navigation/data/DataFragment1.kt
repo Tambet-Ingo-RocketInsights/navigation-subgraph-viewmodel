@@ -8,7 +8,7 @@ import androidx.navigation.navGraphViewModels
 import ee.it.navigation.data.databinding.FragmentData1Binding
 
 class DataFragment1 : Fragment(R.layout.fragment_data1) {
-    private val viewModel: MyDataViewModel by navGraphViewModels(R.id.data_graph)
+    private val viewModel: MyDataViewModel by navGraphViewModels(DataNavGraph.id)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -17,7 +17,7 @@ class DataFragment1 : Fragment(R.layout.fragment_data1) {
             textView.text = viewModel.data.name
 
             nextButton.setOnClickListener {
-                findNavController().navigate(R.id.action_dataFragment1_to_dataFragment2)
+                findNavController().navigate(DataNavGraph.action.toDataFragment2)
             }
         }
     }

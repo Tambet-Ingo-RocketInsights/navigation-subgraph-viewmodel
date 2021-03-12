@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">navigation</string>
+    <string name="home_title">Home</string>
+    <string name="single_title">Single</string>
 </resources>
